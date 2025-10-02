@@ -3,39 +3,26 @@
 
 int main(int argc, char *argv[])
 { 
-    int x,y;
-    int result;
-    char op;
+    int answer = 66;
+    int trial = 0;
+    int num;
     
-    result = 0;
-    
-    printf("enter the calculation : ");
-    scanf("%i%c%i", &x, &op, &y);
-    
-    switch(op)
+    do
     {
-              case '+' : 
-                   result = x + y;
-                   break;
-                   
-              case '-' :
-                   result = x - y;
-                   break;
-                   
-              case '*' :
-                   result = x * y;
-                   break;
-                   
-              case '/' :
-                   result = x / y;
-                   break;
-                   
-              default:
-                      printf("Invalid operator!\n");
-                      break;
+        printf("Guess a number :");
+        scanf("%i", &num);
+        
+        if (num > answer)
+           printf("high!\n");
+        else if (num < answer)
+           printf("low!\n");
+           
+        trial = trial + 1;
     }
+    while(num != answer);
     
-    printf("= %i", result);
+    
+    printf("Congratulation! trials : %i\n", trial);
     
   system("PAUSE");	
   return 0;
